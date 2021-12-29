@@ -1,16 +1,1347 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Bellefair&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500&display=swap");
+.homeContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+  height: 100vh;
+  background-image: url("/home/background-home-desktop.jpg");
+  background-position: center;
+}
+.homeContainer main {
+  width: 100%;
+  height: 85%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+.homeContainer main .container {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-end;
+}
+.homeContainer main .container .text {
+  width: fit-content;
+}
+.homeContainer main .container .text p {
+  color: var(--white2);
+  opacity: 0.85;
+}
+.homeContainer main .container .text p:first-child {
+  width: fit-content;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: var(--heading5);
+  font-family: "Barlow Condensed";
+  letter-spacing: 4.75px;
+}
+.homeContainer main .container .text p.small-text {
+  width: 500px;
+  height: fit-content;
+  font-family: Calibri;
+  font-weight: 20;
+  font-size: calc(var(--subheading1) * 0.72);
+  letter-spacing: 0.3px;
+}
+.homeContainer main .container .text h3 {
+  color: var(--white1);
+  width: fit-content;
+  font-weight: 400;
+  font-family: "Bellefair";
+  font-size: var(--heading1);
+  text-transform: uppercase;
+  line-height: calc(var(--heading1) * 1.5);
+}
+.homeContainer main .container .explore-image {
+  --explore-size: 250px;
+  position: relative;
+  width: var(--explore-size);
+  height: var(--explore-size);
+  border-radius: 50%;
+  background-color: var(--white1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+.homeContainer main .container .explore-image::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  opacity: 1;
+  z-index: -1;
+  width: calc(var(--explore-size) * 1);
+  height: calc(var(--explore-size) * 1);
+  background-color: var(--white1);
+  transform: translate(-50%, -50%);
+  transition: cubic-bezier(0.445, 0.05, 0.55, 0.95) 500ms;
+}
+.homeContainer main .container .explore-image:hover::before {
+  opacity: 0.56;
+  width: calc(var(--explore-size) * 1.5);
+  height: calc(var(--explore-size) * 1.5);
+}
+.homeContainer main .container .explore-image h3 {
+  color: var(--dark);
+  font-weight: 400;
+  font-family: "Bellefair";
+  font-size: var(--heading4);
+  text-transform: uppercase;
+}
+.homeContainer main .container .explore-image h3:hover {
+  cursor: pointer;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+@media (max-width: 1024px) {
+  .homeContainer {
+    height: 150vh;
+    background-image: url("/home/background-home-tablet.jpg");
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .homeContainer main {
+    height: 100%;
+  }
+  .homeContainer main .container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  .homeContainer main .container .text {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: translateY(20%);
+  }
+  .homeContainer main .container .text p:first-child {
+    font-size: calc(var(--heading5) * 0.83);
+    letter-spacing: 4.25px;
+  }
+  .homeContainer main .container .text p.small-text {
+    text-align: center;
+    width: 550px;
+  }
+  .homeContainer main .container .text h3 {
+    line-height: calc(var(--heading1) * 1.2);
+  }
+  .homeContainer main .container .explore-image {
+    --explore-size: 200px;
+    transform: translateY(20%);
+  }
+}
+@media (max-width: 750px) {
+  .homeContainer {
+    content: "";
+    height: 175vh;
+  }
+  .homeContainer main {
+    content: "";
+  }
+  .homeContainer main .container {
+    content: "";
+  }
+  .homeContainer main .container .text {
+    content: "";
+    width: 95%;
+  }
+  .homeContainer main .container .text p {
+    content: "";
+  }
+  .homeContainer main .container .text p:first-child {
+    content: "";
+    font-size: calc(var(--heading5) * 0.83);
+    text-align: center;
+  }
+  .homeContainer main .container .text p.small-text {
+    content: "";
+    width: 95%;
+  }
+  .homeContainer main .container .text h3 {
+    content: "";
+    font-size: calc(var(--heading1) * 0.83);
+  }
+}
+@media (max-width: 400px) {
+  .homeContainer {
+    height: 225vh;
+  }
+  .homeContainer main .container .text h3 {
+    content: "";
+    font-size: calc(var(--heading1) * 0.6);
+  }
+}
+.destinationContainer {
+  width: 100vw;
+  height: 100vh;
+  min-height: 650px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--dark);
+  animation: backgroundTrans 750ms ease-in 0s forwards;
+}
+.destinationContainer .contents {
+  height: 100%;
+  width: 70%;
+  min-width: 900px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-top: calc(var(--ten-px) * 10);
+}
+.destinationContainer .contents .title {
+  --font-size: var(--subheading1);
+}
+.destinationContainer .contents .title p.count {
+  color: var(--white1);
+  opacity: 0.46;
+  font-weight: 500;
+  font-family: "Barlow Condensed";
+  font-size: var(--font-size);
+}
+.destinationContainer .contents .title h3 {
+  color: var(--white1);
+  font-weight: 200;
+  font-family: "Barlow Condensed";
+  font-size: var(--font-size);
+  text-transform: uppercase;
+}
+.destinationContainer .contents .planets {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+.destinationContainer .contents .planets .menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  width: fit-content;
+}
+.destinationContainer .contents .planets .menu ul {
+  display: flex;
+  justify-content: space-between;
+  width: 400px;
+  margin-right: calc(var(--ten-px) * 3.6);
+}
+.destinationContainer .contents .planets .menu ul .item-link {
+  width: fit-content;
+  color: var(--white1);
+  text-transform: uppercase;
+  font-size: var(--nav-text);
+  font-family: "Barlow Condensed";
+  padding: calc(var(--ten-px) * 1.02) 0px;
+  border-bottom: 3px solid transparent;
+  transition: cubic-bezier(0.6, -0.28, 0.735, 0.045) 300ms;
+}
+.destinationContainer .contents .planets .menu ul .item-link:hover {
+  cursor: pointer;
+  border-bottom-color: var(--white1);
+}
+.destinationContainer .contents .planets .menu ul .item-link-selected {
+  border-bottom: 3px solid var(--white1);
+}
+.destinationContainer .contents .planets main {
+  width: 100%;
+  height: 60vh;
+  display: flex;
+  justify-content: space-between;
+}
+.destinationContainer .contents .planets main .text {
+  width: 450px;
+}
+.destinationContainer .contents .planets main .text .title {
+  padding: calc(var(--ten-px) * 2) 0px;
+}
+.destinationContainer .contents .planets main .text .title h3 {
+  color: var(--white1);
+  font-family: "Bellefair";
+  font-size: var(--heading2);
+}
+.destinationContainer .contents .planets main .text .about {
+  padding-bottom: calc(var(--ten-px) * 2);
+  border-bottom: 1px solid var(--white2);
+}
+.destinationContainer .contents .planets main .text .about p {
+  opacity: 0.88;
+  color: var(--white2);
+  font-family: "Calibri Light";
+  font-size: calc(var(--subheading1) * 0.63);
+}
+.destinationContainer .contents .planets main .text .more-info {
+  width: 70%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.destinationContainer .contents .planets main .text .more-info div {
+  margin-top: calc(var(--ten-px) * 2);
+}
+.destinationContainer .contents .planets main .text .more-info div .title,
+.destinationContainer .contents .planets main .text .more-info div .description {
+  margin-top: var(--ten-px);
+}
+.destinationContainer .contents .planets main .text .more-info div .title {
+  color: var(--white2);
+  font-weight: 100;
+  font-size: calc(var(--subheading2) * 1.2);
+  font-family: "Barlow Condensed";
+}
+.destinationContainer .contents .planets main .text .more-info div .description {
+  color: var(--white1);
+  font-family: "Bellefair";
+  font-size: var(--subheading1);
+  text-transform: uppercase;
+}
+
+@media (max-width: 1024px) {
+  .destinationContainer {
+    width: 100vw;
+    height: 160vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  .destinationContainer .contents {
+    width: 85%;
+    min-width: 680px;
+  }
+  .destinationContainer .contents .title {
+    --font-size: calc(var(--subheading1) * 0.85);
+    display: flex;
+    flex-direction: row;
+  }
+  .destinationContainer .contents .title p.count {
+    letter-spacing: 1.5px;
+    padding-right: calc(var(--ten-px) * 1.3);
+  }
+  .destinationContainer .contents .title h3 {
+    letter-spacing: 1px;
+  }
+  .destinationContainer .contents .planets {
+    position: relative;
+    height: 90%;
+  }
+  .destinationContainer .contents .planets .menu {
+    position: absolute;
+    top: 52%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+  }
+  .destinationContainer .contents .planets .menu ul {
+    width: 300px;
+  }
+  .destinationContainer .contents .planets main {
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+  .destinationContainer .contents .planets main .image {
+    transform: translateY(10%);
+  }
+  .destinationContainer .contents .planets main .text {
+    width: 580px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .destinationContainer .contents .planets main .text .title h3 {
+    padding: 0px;
+    font-size: calc(var(--heading2) * 0.8);
+  }
+  .destinationContainer .contents .planets main .text .about {
+    border-width: 0px;
+    padding: 0px;
+  }
+  .destinationContainer .contents .planets main .text .about p {
+    text-align: center;
+  }
+  .destinationContainer .contents .planets main .text .more-info {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: calc(var(--ten-px) * 3.5);
+    padding-top: calc(var(--three-px) * 1.1);
+    border-top: 1px solid var(--white2);
+  }
+  .destinationContainer .contents .planets main .text .more-info div {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0px;
+    padding: 0px;
+  }
+  .destinationContainer .contents .planets main .text .more-info div .title,
+.destinationContainer .contents .planets main .text .more-info div .description {
+    width: fit-content;
+    text-align: center;
+  }
+  .destinationContainer .contents .planets main .text .more-info div .title {
+    font-weight: 500;
+    font-size: calc(var(--subheading2) * 1.32);
+    letter-spacing: 1.3px;
+  }
+  .destinationContainer .contents .planets main .text .more-info div .description {
+    font-size: calc(var(--subheading1) * 1.1);
+  }
+}
+@media (max-width: 750px) {
+  .destinationContainer {
+    content: "";
+  }
+  .destinationContainer .contents {
+    content: "";
+    min-width: 600px;
+    padding: calc(var(--ten-px) * 2) 0px;
+  }
+  .destinationContainer .contents .title {
+    content: "";
+  }
+  .destinationContainer .contents .planets {
+    content: "";
+  }
+  .destinationContainer .contents .planets main .text {
+    content: "";
+    margin-top: calc(var(--ten-px) * 7);
+    width: 100%;
+  }
+}
+@media (max-width: 600px) {
+  .destinationContainer {
+    content: "";
+  }
+  .destinationContainer .contents {
+    content: "";
+    min-width: 400px;
+    width: 90%;
+  }
+  .destinationContainer .contents .title p {
+    font-size: calc(var(--font-size) * 0.93);
+  }
+  .destinationContainer .contents .title h3 {
+    font-size: calc(var(--font-size) * 0.9);
+  }
+  .destinationContainer .contents .planets .menu {
+    content: "";
+    top: 35%;
+  }
+  .destinationContainer .contents .planets .menu ul {
+    content: "";
+    justify-content: space-around;
+    width: 320px;
+    margin: 0px;
+  }
+  .destinationContainer .contents .planets main {
+    content: "";
+    justify-content: flex-start;
+  }
+  .destinationContainer .contents .planets main .text .about p {
+    content: "";
+  }
+  .destinationContainer .contents .planets main .text .more-info div .title {
+    content: "";
+    font-size: calc(var(--subheading2) * 1.25);
+  }
+  .destinationContainer .contents .planets main .text .more-info div .description {
+    content: "";
+    font-size: calc(var(--subheading1) * 0.9);
+  }
+}
+@media (min-width: 401px) and (max-width: 425px) {
+  .destinationContainer .contents .title {
+    content: "";
+    padding-left: calc(var(--ten-px) * 2);
+  }
+  .destinationContainer .contents .planets main .text .about p {
+    padding: 0px calc(var(--seven-px));
+  }
+  .destinationContainer .contents .planets main .text .more-info {
+    width: 95%;
+  }
+}
+@media (max-width: 400px) {
+  .destinationContainer {
+    content: "";
+  }
+  .destinationContainer .contents {
+    content: "";
+    min-width: 200px;
+    width: 90%;
+  }
+  .destinationContainer .contents .title p.count {
+    font-size: calc(var(--font-size) * 0.9);
+  }
+  .destinationContainer .contents .title h3 {
+    font-size: calc(var(--font-size) * 0.8);
+  }
+  .destinationContainer .contents .planets .menu {
+    content: "";
+    top: 41%;
+  }
+  .destinationContainer .contents .planets .menu ul {
+    content: "";
+  }
+  .destinationContainer .contents .planets .menu ul .item-link {
+    content: "";
+    font-size: calc(var(--nav-text) * 0.9);
+    padding: calc(var(--ten-px) * 0.8) 0px;
+  }
+  .destinationContainer .contents .planets main .text .title h3 {
+    content: "";
+    font-size: calc(var(--heading2) * 0.6);
+  }
+  .destinationContainer .contents .planets main .text .about p {
+    content: "";
+  }
+  .destinationContainer .contents .planets main .text .more-info div .title {
+    content: "";
+    font-size: calc(var(--subheading2) * 1.05);
+  }
+  .destinationContainer .contents .planets main .text .more-info div .description {
+    content: "";
+    font-size: calc(var(--subheading1) * 0.8);
+  }
+}
+@keyframes backgroundTrans {
+  0% {
+    background: linear-gradient(to right bottom, var(--dark), var(--dark)), url("/destination/background-destination-desktop.jpg");
+  }
+  75% {
+    background: linear-gradient(to right bottom, var(--dark), var(--dark), #04061345), url("/destination/background-destination-desktop.jpg");
+  }
+  100% {
+    background: linear-gradient(to right bottom, var(--dark), #04061345, #04061395), url("/destination/background-destination-desktop.jpg");
+  }
+}
+.crewContainer {
+  --container-width: 80vw;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(#02040fbf, #0d0412b5), url("/crew/background-crew-desktop.jpg");
+  background-repeat: no-repeat;
+}
+.crewContainer .title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 80%;
+  transform: translateY(100%);
+}
+.crewContainer .title p.count {
+  letter-spacing: 1.2px;
+  font-family: "Barlow Condensed";
+  font-size: var(--subheading1);
+  font-weight: 500;
+  color: var(--white1);
+  opacity: 0.45;
+  padding-right: var(--ten-px);
+}
+.crewContainer .title h3 {
+  --font-size: calc(var(--nav-text) * 1.405);
+  color: var(--white1);
+  font-weight: 100;
+  font-family: "Bellefair";
+  font-size: var(--font-size);
+  text-transform: uppercase;
+  margin-top: var(--seven-px);
+}
+.crewContainer .container {
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  overflow: hidden;
+  scroll-behavior: smooth;
+  margin-top: calc(var(--ten-px) * 4.5);
+  width: var(--container-width);
+}
+.crewContainer .container .contents {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  width: fit-content;
+  height: 100%;
+}
+.crewContainer .container .contents .content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: fit-content;
+  width: calc(var(--container-width));
+  transform: translateY(10%);
+}
+.crewContainer .container .contents .content .text {
+  width: 50%;
+}
+.crewContainer .container .contents .content .text h3.role {
+  opacity: 0.45;
+  color: var(--white1);
+  font-family: "Bellefair";
+  font-weight: 200;
+  font-size: var(--heading5);
+  text-transform: uppercase;
+  padding-bottom: calc(var(--ten-px) * 0.8);
+}
+.crewContainer .container .contents .content .text h1.name {
+  color: var(--white1);
+  font-family: "Bellefair";
+  font-weight: 200;
+  font-size: calc(var(--heading3) * 0.88);
+  text-transform: uppercase;
+  padding-bottom: calc(var(--ten-px) * 3);
+}
+.crewContainer .container .contents .content .text p.about {
+  width: 450px;
+  color: var(--white2);
+  font-weight: 100;
+  font-family: "Calibri Light";
+  letter-spacing: 0.5px;
+  line-height: calc(var(--subheading2) * 1.75);
+  font-size: calc(var(--subheading2) * 1.33);
+}
+.crewContainer .navigator-menu {
+  position: absolute;
+  bottom: 70px;
+  display: flex;
+  flex-direction: row;
+  width: var(--container-width);
+}
+.crewContainer .navigator-menu .navigator {
+  --navigator-width: 14px;
+  border-radius: 50%;
+  margin-left: var(--seven-px);
+  width: var(--navigator-width);
+  height: var(--navigator-width);
+  background-color: var(--white2);
+  border: calc(var(--navigator-width) * 0.23) solid transparent;
+  opacity: 0.34;
+}
+.crewContainer .navigator-menu .navigator:hover {
+  opacity: 0.53;
+}
+.crewContainer .navigator-menu .navigator-selected {
+  opacity: 1;
+}
+.crewContainer .navigator-menu .navigator-selected:hover {
+  opacity: 1;
+}
+
+@media (max-width: 1024px) {
+  .crewContainer {
+    --container-width: 80vw;
+    height: 160vh;
+    justify-content: flex-end;
+  }
+  .crewContainer .title h3,
+.crewContainer .title p.count {
+    --font-size: calc(var(--subheading1) * 0.85);
+    margin: 0px;
+    letter-spacing: 0.5px;
+    font-size: var(--font-size);
+    font-family: "Barlow Condensed";
+  }
+  .crewContainer .title p.count {
+    letter-spacing: 1.5px;
+  }
+  .crewContainer .container .contents {
+    align-items: flex-start;
+  }
+  .crewContainer .container .contents .content {
+    height: fit-content;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    transform: translateY(0%);
+  }
+  .crewContainer .container .contents .content .text {
+    width: 630px;
+  }
+  .crewContainer .container .contents .content .text h3.role,
+.crewContainer .container .contents .content .text h1.name,
+.crewContainer .container .contents .content .text p.about {
+    width: 100%;
+    text-align: center;
+  }
+  .crewContainer .container .contents .content .text h3.role {
+    font-size: calc(var(--heading5) * 0.75);
+  }
+  .crewContainer .container .contents .content .text h1.name {
+    font-size: calc(var(--heading3) * 0.5);
+    padding-bottom: calc(var(--ten-px) * 0.75);
+  }
+  .crewContainer .container .contents .content .text p.about {
+    line-height: calc(var(--subheading2) * 2.2);
+    font-weight: 100;
+    font-family: "Barlow Condensed";
+    font-size: calc(var(--subheading2) * 1.65);
+  }
+  .crewContainer .container .contents .content .image {
+    height: fit-content;
+    margin-top: 60px;
+  }
+  .crewContainer .navigator-menu {
+    width: fit-content;
+    height: fit-content;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, 100px);
+  }
+}
+@media (max-width: 787px) {
+  .crewContainer {
+    --container-width: 95vw;
+  }
+  .crewContainer .title p.count {
+    content: "";
+    font-size: calc(var(--font-size) * 0.87);
+  }
+  .crewContainer .title h3 {
+    content: "";
+    font-size: calc(var(--font-size) * 0.87);
+  }
+  .crewContainer .container {
+    content: "";
+  }
+  .crewContainer .container .contents {
+    content: "";
+  }
+  .crewContainer .container .contents .content {
+    content: "";
+  }
+  .crewContainer .container .contents .content .text {
+    content: "";
+    width: 95%;
+  }
+  .crewContainer .container .contents .content .text p.about {
+    content: "";
+    font-size: calc(var(--subheading2) * 1.4);
+  }
+  .crewContainer .container .contents .content .image {
+    margin-top: calc(var(--ten-px) * 8);
+  }
+  .crewContainer .navigator-menu {
+    content: "";
+  }
+}
+@media (max-width: 590px) {
+  .crewContainer {
+    --container-width: 95vw;
+    height: 170vh;
+  }
+  .crewContainer .container {
+    content: "";
+  }
+  .crewContainer .container .contents {
+    content: "";
+  }
+  .crewContainer .container .contents .content {
+    content: "";
+  }
+  .crewContainer .container .contents .content .text {
+    content: "";
+  }
+  .crewContainer .navigator-menu {
+    content: "";
+    transform: translate(-50%, 135px);
+  }
+}
+@media (max-width: 400px) {
+  .crewContainer {
+    --container-width: 95vw;
+    height: 175vh;
+  }
+  .crewContainer .container {
+    content: "";
+  }
+  .crewContainer .container .contents {
+    content: "";
+  }
+  .crewContainer .container .contents .content {
+    content: "";
+  }
+  .crewContainer .container .contents .content .text {
+    content: "";
+  }
+  .crewContainer .container .contents .content .text p.about {
+    content: "";
+    font-size: calc(var(--subheading2) * 1.33);
+  }
+  .crewContainer .navigator-menu {
+    content: "";
+    transform: translate(-50%, 142px);
+  }
+}
+@media (max-width: 360px) {
+  .crewContainer {
+    --container-width: 95vw;
+  }
+  .crewContainer .container {
+    content: "";
+  }
+  .crewContainer .container .contents {
+    content: "";
+  }
+  .crewContainer .container .contents .content {
+    content: "";
+  }
+  .crewContainer .container .contents .content .text {
+    content: "";
+  }
+  .crewContainer .container .contents .content .text p.about {
+    font-size: calc(var(--subheading2) * 1.23);
+  }
+  .crewContainer .navigator-menu {
+    content: "";
+    transform: translate(-50%, 165px);
+  }
+}
+.technologyContainer {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding-bottom: var(--ten-px);
+  background-image: url("/technology/background-technology-desktop.jpg");
+}
+.technologyContainer .container {
+  width: 85%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
+.technologyContainer .container .title {
+  display: flex;
+  color: var(--white1);
+}
+.technologyContainer .container .title p.count {
+  opacity: 0.456;
+  padding-right: var(--ten-px);
+  font-weight: 500;
+  font-size: calc(var(--subheading1) * 0.87);
+  font-family: "Barlow Condensed";
+  letter-spacing: 2px;
+}
+.technologyContainer .container .title h3 {
+  font-weight: 100;
+  font-size: calc(var(--subheading1) * 0.87);
+  font-family: "Barlow Condensed";
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+.technologyContainer .container .main-contents {
+  --contentsFixedHeight: 250px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 87%;
+}
+.technologyContainer .container .main-contents main#counters {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: var(--contentsFixedHeight);
+}
+.technologyContainer .container .main-contents main#counters .space-counter {
+  --size: 65px;
+  width: var(--size);
+  height: var(--size);
+  color: var(--white1);
+  display: grid;
+  place-items: center;
+  text-align: center;
+  border-radius: 50%;
+  font-size: var(--heading5);
+  font-family: "Bellefair";
+  background-color: transparent;
+  border: 1px solid var(--white1);
+  transition: background-color 300ms cubic-bezier(0.39, 0.575, 0.565, 1);
+  transition: color 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+.technologyContainer .container .main-contents main#counters .space-counter:hover {
+  --color: #9d753485;
+  color: var(--color);
+  border-color: var(--color);
+  cursor: pointer;
+}
+.technologyContainer .container .main-contents main#counters .space-counter:active {
+  opacity: 0.35;
+  transition: background-color 300ms ease-in-out;
+  transition: color 300ms ease-in-out;
+}
+.technologyContainer .container .main-contents main#counters .space-counter-selected {
+  opacity: 1;
+  color: var(--dark);
+  background-color: var(--white2);
+}
+.technologyContainer .container .main-contents main#counters .space-counter-selected:hover {
+  opacity: 1;
+  color: var(--dark);
+  border: 1px solid var(--white2);
+  background-color: var(--white2);
+}
+.technologyContainer .container .main-contents main#text .title p {
+  color: var(--white2);
+  font-weight: 100;
+  font-size: calc(var(--nav-text) * 1.15);
+  font-family: "Barlow Condensed";
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+.technologyContainer .container .main-contents main#text #contents {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  width: 550px;
+  height: var(--contentsFixedHeight);
+  scroll-behavior: smooth;
+}
+.technologyContainer .container .main-contents main#text #contents .contents {
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+}
+.technologyContainer .container .main-contents main#text #contents .contents .content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding-top: calc(var(--ten-px));
+  height: var(--contentsFixedHeight);
+}
+.technologyContainer .container .main-contents main#text #contents .contents .content .title h3 {
+  color: var(--white1);
+  font-family: "Bellefair";
+  font-weight: 100;
+  font-size: calc(var(--heading3) * 1);
+}
+.technologyContainer .container .main-contents main#text #contents .contents .content .about {
+  margin-top: calc(var(--ten-px) * 2);
+}
+.technologyContainer .container .main-contents main#text #contents .contents .content .about p {
+  width: 450px;
+  color: var(--white2);
+  font-family: "Calibri";
+  font-weight: 100;
+  font-size: calc(var(--subheading2) * 1.4);
+  line-height: calc(var(--subheading2) * 1.8);
+}
+.technologyContainer .container .main-contents main#image {
+  position: relative;
+  width: 400px;
+  height: 450px;
+  transform: translateY(-5%);
+}
+.technologyContainer .container .main-contents main#image * {
+  transition: 600ms cubic-bezier(0.47, 0, 0.745, 0.715);
+}
+
+@media (max-width: 1024px) {
+  .technologyContainer {
+    height: fit-content;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .technologyContainer .container {
+    margin-top: calc(var(--ten-px) * 10);
+    width: 91%;
+  }
+  .technologyContainer .container .main-contents {
+    flex-direction: column-reverse;
+    margin-top: calc(var(--ten-px) * 5);
+  }
+  .technologyContainer .container .main-contents main#counters {
+    flex-direction: row;
+    justify-content: space-around;
+    width: 275px;
+    height: fit-content;
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .technologyContainer .container .main-contents main#counters .space-counter {
+    --size: 60px;
+  }
+  .technologyContainer .container .main-contents main#text {
+    margin-top: calc(var(--ten-px) * 10);
+  }
+  .technologyContainer .container .main-contents main#text div.title {
+    display: flex;
+    justify-content: center;
+  }
+  .technologyContainer .container .main-contents main#text div#contents {
+    content: "";
+  }
+  .technologyContainer .container .main-contents main#text div#contents section.contents div.content div.title,
+.technologyContainer .container .main-contents main#text div#contents section.contents div.content div.about {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .technologyContainer .container .main-contents main#text div#contents section.contents div.content div.title h3,
+.technologyContainer .container .main-contents main#text div#contents section.contents div.content div.about h3 {
+    font-size: calc(var(--heading3) * 0.8);
+  }
+  .technologyContainer .container .main-contents main#text div#contents section.contents div.content div.title p,
+.technologyContainer .container .main-contents main#text div#contents section.contents div.content div.about p {
+    width: 100%;
+    text-align: center;
+  }
+  .technologyContainer .container .main-contents main#image {
+    width: 100vw;
+    height: 340px;
+    overflow: hidden;
+  }
+}
+@media (max-width: 560px) {
+  .technologyContainer {
+    content: "";
+  }
+  .technologyContainer .container {
+    content: "";
+  }
+  .technologyContainer .container .main-contents {
+    --contentsFixedHeight: 300px;
+  }
+  .technologyContainer .container .main-contents main#counters {
+    content: "";
+  }
+  .technologyContainer .container .main-contents main#counters .space-counter {
+    content: "";
+  }
+  .technologyContainer .container .main-contents main#text {
+    content: "";
+  }
+  .technologyContainer .container .main-contents main#text div.title {
+    content: "";
+  }
+  .technologyContainer .container .main-contents main#text div#contents {
+    width: 100%;
+    content: "";
+  }
+  .technologyContainer .container .main-contents main#text div#contents section.contents {
+    content: "";
+  }
+  .technologyContainer .container .main-contents main#text div#contents section.contents div.content {
+    content: "";
+  }
+  .technologyContainer .container .main-contents main#text div#contents section.contents div.content div.title,
+.technologyContainer .container .main-contents main#text div#contents section.contents div.content div.about {
+    content: "";
+  }
+  .technologyContainer .container .main-contents main#text div#contents section.contents div.content div.title h3,
+.technologyContainer .container .main-contents main#text div#contents section.contents div.content div.about h3 {
+    content: "";
+    font-size: calc(var(--heading3) * 0.6);
+  }
+  .technologyContainer .container .main-contents main#text div#contents section.contents div.content div.title p,
+.technologyContainer .container .main-contents main#text div#contents section.contents div.content div.about p {
+    content: "";
+  }
+  .technologyContainer .container .main-contents main#image {
+    content: "";
+  }
+}
+@media (max-width: 400px) {
+  .technologyContainer {
+    content: "";
+  }
+  .technologyContainer .container {
+    content: "";
+  }
+  .technologyContainer .container .title p.count {
+    content: "";
+    font-size: calc(var(--subheading1) * 0.7);
+  }
+  .technologyContainer .container .title h3 {
+    content: "";
+    font-size: calc(var(--subheading1) * 0.7);
+  }
+  .technologyContainer .container .main-contents {
+    --contentsFixedHeight: 350px;
+  }
+  .technologyContainer .container .main-contents main#counters {
+    width: 210px;
+  }
+  .technologyContainer .container .main-contents main#counters .space-counter {
+    --size: 52px;
+  }
+  .technologyContainer .container .main-contents main#text {
+    content: "";
+  }
+  .technologyContainer .container .main-contents main#text div.title {
+    content: "";
+  }
+  .technologyContainer .container .main-contents main#text div.title p {
+    content: "";
+    font-size: calc(var(--nav-text) * 0.9);
+  }
+  .technologyContainer .container .main-contents main#text div#contents {
+    content: "";
+  }
+  .technologyContainer .container .main-contents main#text div#contents section.contents {
+    content: "";
+  }
+  .technologyContainer .container .main-contents main#text div#contents section.contents div.content {
+    content: "";
+  }
+  .technologyContainer .container .main-contents main#text div#contents section.contents div.content div.title,
+.technologyContainer .container .main-contents main#text div#contents section.contents div.content div.about {
+    content: "";
+  }
+  .technologyContainer .container .main-contents main#text div#contents section.contents div.content div.title h3,
+.technologyContainer .container .main-contents main#text div#contents section.contents div.content div.about h3 {
+    content: "";
+    font-size: calc(var(--heading3) * 0.45);
+  }
+  .technologyContainer .container .main-contents main#text div#contents section.contents div.content div.title p,
+.technologyContainer .container .main-contents main#text div#contents section.contents div.content div.about p {
+    content: "";
+    font-size: calc(var(--subheading2) * 1.3);
+  }
+  .technologyContainer .container .main-contents main#image {
+    content: "";
+  }
+}
+:root {
+  --white1: #ffffff;
+  --white2: #cfd3fc;
+  --dark: #0b0d17;
+  --heading1: 9.375rem;
+  --heading2: 6.25rem;
+  --heading3: 3.5rem;
+  --heading4: 2rem;
+  --heading5: 1.75rem;
+  --subheading1: 1.75rem;
+  --subheading2: 0.875rem;
+  --nav-text: 1rem;
+  --three-px: 3px;
+  --seven-px: 7px;
+  --ten-px: 10px;
+  --larger-screen: 1240px;
+  --tablet-screen: 1200px;
+  --mobile-screen: 500px;
 }
 
 * {
+  margin: 0px;
+  padding: 0px;
   box-sizing: border-box;
 }
+* p {
+  font-size: var(--nav-text);
+  font-family: "Calibri Light";
+}
+
+body {
+  width: 100vw;
+  overflow-x: hidden;
+}
+body .navbarContainer {
+  position: absolute;
+  top: calc(var(--ten-px) * 3);
+  left: 0px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+body .navbarContainer .contents {
+  width: 95%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+body .navbarContainer .contents .logo {
+  opacity: 1;
+}
+body .navbarContainer .contents ul {
+  position: relative;
+  width: 59%;
+  display: flex;
+  justify-content: space-evenly;
+}
+body .navbarContainer .contents ul .item-link {
+  opacity: 0.75;
+  padding: calc(var(--ten-px) * 3) 0px;
+  border-bottom: 3px solid transparent;
+  transition: 450ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+body .navbarContainer .contents ul .item-link:hover {
+  opacity: 0.6;
+  border-bottom-color: var(--white1);
+  cursor: pointer;
+}
+body .navbarContainer .contents ul .item-link:active {
+  opacity: 1;
+}
+body .navbarContainer .contents ul .item-link span {
+  color: var(--white1);
+  font-weight: 400;
+  font-size: var(--nav-text);
+  letter-spacing: 1px;
+  font-family: "Barlow Condensed";
+}
+body .navbarContainer .contents ul .item-link span:first-child {
+  font-weight: 500;
+  letter-spacing: 2.7px;
+  padding-right: var(--seven-px);
+}
+body .navbarContainer .contents ul .item-link-selected,
+body .navbarContainer .contents ul .item-link-selected:hover {
+  border-bottom: 3px solid var(--white1);
+}
+body .navbarContainer .contents ul::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background: var(--white2);
+  opacity: 0.14;
+  width: 100%;
+  height: 100%;
+}
+body .navbarContainer .contents ul::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0px;
+  opacity: 0.05;
+  width: 395px;
+  height: 2px;
+  background: #ffffff;
+  mix-blend-mode: normal;
+  transform: translateX(-93%);
+}
+
+@media (min-width: 760px) and (max-width: 1024px) {
+  body .navbarContainer {
+    position: absolute;
+    top: 0px;
+  }
+  body .navbarContainer .contents ul {
+    min-width: 500px;
+  }
+  body .navbarContainer .contents ul::after {
+    display: none;
+  }
+}
+@media (max-width: 750px) {
+  body .navbarContainer {
+    position: fixed;
+    top: 0px;
+    z-index: 2;
+    padding: calc(var(--ten-px) * 2) 0px;
+    background-color: var(--dark);
+    box-shadow: 0px 1px 3px;
+  }
+  body .navbarContainer .contents span {
+    align-self: flex-start;
+  }
+  body .navbarContainer .contents #menu-button {
+    position: fixed;
+    right: 30px;
+    width: 25px;
+    z-index: 3;
+  }
+  body .navbarContainer .contents #menu-button div {
+    width: 25px;
+    height: 3px;
+    background-color: var(--white1);
+    margin-bottom: calc(var(--seven-px) * 0.8);
+    transition: transform 450ms cubic-bezier(0.39, 0.575, 0.565, 1);
+  }
+  body .navbarContainer .contents .x-button .first {
+    transform: rotateZ(45deg) translate(7px, 7px);
+  }
+  body .navbarContainer .contents .x-button #second {
+    opacity: 0.03;
+    transform: translate(200px, 0px);
+  }
+  body .navbarContainer .contents .x-button .third {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+  body .navbarContainer .contents ul {
+    content: "";
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    height: 120vh;
+    width: 50%;
+    min-width: 260px;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: calc(var(--ten-px) * 5) 0px;
+    background-color: #020203fc;
+    box-shadow: -4px 0px 12px #b0cdfe18;
+    transition: width, display 450ms ease-in-out;
+  }
+  body .navbarContainer .contents ul div.item-link {
+    content: "";
+    padding: calc(var(--ten-px) * 1.5) calc(var(--ten-px) * 2);
+    border-bottom: 0px;
+    transition: 400ms cubic-bezier(0.39, 0.575, 0.565, 1);
+  }
+  body .navbarContainer .contents ul div.item-link:hover {
+    opacity: 0.6;
+    border-left: 12px solid transparent;
+    cursor: pointer;
+  }
+  body .navbarContainer .contents ul .item-link-selected,
+body .navbarContainer .contents ul .item-link-selected:hover {
+    border: 0px;
+    border-left: 5px solid var(--white1);
+  }
+  body .navbarContainer .contents ul .item-link-selected:hover,
+body .navbarContainer .contents ul .item-link-selected:hover:hover {
+    border-left: 5px solid var(--white1);
+  }
+  body .navbarContainer .contents ul::before {
+    background: linear-gradient(to bottom left, #131323f3, #becdcfff);
+  }
+  body .navbarContainer .contents ul::after {
+    display: none;
+    content: "";
+  }
+  body .navbarContainer .contents .hide-list {
+    width: 0px;
+    padding: 0px;
+    height: 0px;
+    overflow: hidden;
+    transition: all 450ms ease-in-out;
+  }
+  body .navbarContainer .contents .hide-list .item-link {
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=globals.css.map */

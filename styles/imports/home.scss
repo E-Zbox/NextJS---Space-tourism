@@ -1,0 +1,190 @@
+.homeContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+    height: 100vh;
+    background-image: url("/home/background-home-desktop.jpg");
+    background-position: center;
+    main {
+        width: 100%;
+        height: 85%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        // padding-top: calc(var(--ten-px) * 10);
+        .container {
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: flex-end;
+            .text {
+                width: fit-content;
+                p {
+                    color: var(--white2);
+                    opacity: 0.85;
+                    &:first-child {
+                        width: fit-content;
+                        font-weight: 400;
+                        text-transform: uppercase;
+                        font-size: var(--heading5);
+                        font-family: "Barlow Condensed";
+                        letter-spacing: 4.75px;
+                    }
+                    &.small-text {
+                        width: 500px;
+                        height: fit-content;
+                        font-family: Calibri;
+                        font-weight: 20;
+                        font-size: calc(var(--subheading1) * 0.72);
+                        letter-spacing: 0.3px;
+                    }
+                }
+
+                h3 {
+                    color: var(--white1);
+                    width: fit-content;
+                    font-weight: 400;
+                    font-family: "Bellefair";
+                    font-size: var(--heading1);
+                    text-transform: uppercase;
+                    line-height: calc(var(--heading1) * 1.5);
+                }
+            }
+            .explore-image {
+                --explore-size: 250px;
+                position: relative;
+                width: var(--explore-size);
+                height: var(--explore-size);
+                border-radius: 50%;
+                background-color: var(--white1);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                z-index: 1;
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    border-radius: 50%;
+                    opacity: 1;
+                    z-index: -1;
+                    width: calc(var(--explore-size) * 1);
+                    height: calc(var(--explore-size) * 1);
+                    background-color: var(--white1);
+                    transform: translate(-50%, -50%);
+                    transition: cubic-bezier(0.445, 0.05, 0.55, 0.95) 500ms;
+                }
+                &:hover {
+                    &::before {
+                        opacity: 0.56;
+                        width: calc(var(--explore-size) * 1.5);
+                        height: calc(var(--explore-size) * 1.5);
+                    }
+                }
+                h3 {
+                    color: var(--dark);
+                    font-weight: 400;
+                    font-family: "Bellefair";
+                    font-size: var(--heading4);
+                    text-transform: uppercase;
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 1024px) {
+    .homeContainer {
+        height: 150vh;
+        background-image: url("/home/background-home-tablet.jpg");
+        background-size: 100% 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        main {
+            height: 100%;
+            .container {
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+                align-items: center;
+                .text {
+                    width: 70%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    transform: translateY(20%);
+                    p {
+                        &:first-child {
+                            font-size: calc(var(--heading5) * 0.83);
+                            letter-spacing: 4.25px;
+                        }
+                        &.small-text {
+                            text-align: center;
+                            width: 550px;
+                        }
+                    }
+                    h3 {
+                        line-height: calc(var(--heading1) * 1.2);
+                    }
+                }
+                .explore-image {
+                    --explore-size: 200px;
+                    transform: translateY(20%);
+                }
+            }
+        }
+    }
+}
+@media (max-width: 750px) {
+    .homeContainer {
+        content: "";
+        height: 175vh;
+        main {
+            content: "";
+            .container {
+                content: "";
+                .text {
+                    content: "";
+                    width: 95%;
+                    p {
+                        content: "";
+                        &:first-child {
+                            content: "";
+                            font-size: calc(var(--heading5) * 0.83);
+                            text-align: center;
+                        }
+                        &.small-text {
+                            content: "";
+                            width: 95%;
+                        }
+                    }
+                    h3 {
+                        content: "";
+                        font-size: calc(var(--heading1) * 0.83);
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 400px) {
+    .homeContainer {
+        height: 225vh;
+        main {
+            .container {
+                .text {
+                    h3 {
+                        content: "";
+                        font-size: calc(var(--heading1) * 0.6);
+                    }
+                }
+            }
+        }
+    }
+}

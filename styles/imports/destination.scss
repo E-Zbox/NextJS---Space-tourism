@@ -1,0 +1,408 @@
+.destinationContainer {
+    width: 100vw;
+    height: 100vh;
+    min-height: 650px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--dark);
+    animation: backgroundTrans 750ms ease-in 0s forwards;
+    .contents {
+        height: 100%;
+        width: 70%;
+        min-width: 900px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        margin-top: calc(var(--ten-px) * 10);
+        .title {
+            --font-size: var(--subheading1);
+            p.count {
+                color: var(--white1);
+                opacity: 0.46;
+                font-weight: 500;
+                font-family: "Barlow Condensed";
+                font-size: var(--font-size);
+            }
+            h3 {
+                color: var(--white1);
+                font-weight: 200;
+                font-family: "Barlow Condensed";
+                font-size: var(--font-size);
+                text-transform: uppercase;
+            }
+        }
+        .planets {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-end;
+            .menu {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                width: fit-content;
+                ul {
+                    display: flex;
+                    justify-content: space-between;
+                    width: 400px;
+                    margin-right: calc(var(--ten-px) * 3.6);
+                    .item-link {
+                        width: fit-content;
+                        color: var(--white1);
+                        text-transform: uppercase;
+                        font-size: var(--nav-text);
+                        font-family: "Barlow Condensed";
+                        padding: calc(var(--ten-px) * 1.02) 0px;
+                        border-bottom: 3px solid transparent;
+                        transition: cubic-bezier(0.6, -0.28, 0.735, 0.045) 300ms;
+                        &:hover {
+                            cursor: pointer;
+                            border-bottom-color: var(--white1);
+                        }
+                    }
+                    .item-link-selected {
+                        border-bottom: 3px solid var(--white1);
+                    }
+                }
+            }
+            main {
+                width: 100%;
+                height: 60vh;
+                display: flex;
+                justify-content: space-between;
+                .text {
+                    width: 450px;
+                    .title {
+                        padding: calc(var(--ten-px) * 2) 0px;
+                        h3 {
+                            color: var(--white1);
+                            font-family: "Bellefair";
+                            font-size: var(--heading2);
+                        }
+                    }
+                    .about {
+                        padding-bottom: calc(var(--ten-px) * 2);
+                        border-bottom: 1px solid var(--white2);
+                        p {
+                            opacity: 0.88;
+                            color: var(--white2);
+                            font-family: "Calibri Light";
+                            font-size: calc(var(--subheading1) * 0.63);
+                        }
+                    }
+                    .more-info {
+                        width: 70%;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        div {
+                            margin-top: calc(var(--ten-px) * 2);
+                            .title,
+                            .description {
+                                margin-top: var(--ten-px);
+                            }
+                            .title {
+                                color: var(--white2);
+                                font-weight: 100;
+                                font-size: calc(var(--subheading2) * 1.2);
+                                font-family: "Barlow Condensed";
+                            }
+                            .description {
+                                color: var(--white1);
+                                font-family: "Bellefair";
+                                font-size: var(--subheading1);
+                                text-transform: uppercase;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+// @media (min-width: 760px) and (max-width: 1024px) {
+@media (max-width: 1024px) {
+    .destinationContainer {
+        width: 100vw;
+        height: 160vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        .contents {
+            width: 85%;
+            min-width: 680px;
+            .title {
+                --font-size: calc(var(--subheading1) * 0.85);
+                display: flex;
+                flex-direction: row;
+
+                p.count {
+                    letter-spacing: 1.5px;
+                    padding-right: calc(var(--ten-px) * 1.3);
+                }
+                h3 {
+                    letter-spacing: 1px;
+                }
+            }
+            .planets {
+                position: relative;
+                height: 90%;
+                .menu {
+                    position: absolute;
+                    top: 52%;
+                    left: 50%;
+                    transform: translate(-50%, 0%);
+                    ul {
+                        width: 300px;
+                    }
+                }
+                main {
+                    height: 100%;
+                    flex-direction: column;
+                    align-items: center;
+                    .image {
+                        transform: translateY(10%);
+                    }
+                    .text {
+                        width: 580px;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        .title {
+                            h3 {
+                                padding: 0px;
+                                font-size: calc(var(--heading2) * 0.8);
+                            }
+                        }
+                        .about {
+                            border-width: 0px;
+                            padding: 0px;
+                            p {
+                                text-align: center;
+                            }
+                        }
+                        .more-info {
+                            width: 100%;
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: space-around;
+                            margin-top: calc(var(--ten-px) * 3.5);
+                            padding-top: calc(var(--three-px) * 1.1);
+                            border-top: 1px solid var(--white2);
+                            div {
+                                width: 200px;
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
+                                margin-top: 0px;
+                                padding: 0px;
+                                .title,
+                                .description {
+                                    width: fit-content;
+                                    text-align: center;
+                                }
+                                .title {
+                                    font-weight: 500;
+                                    font-size: calc(var(--subheading2) * 1.32);
+                                    letter-spacing: 1.3px;
+                                }
+                                .description {
+                                    font-size: calc(var(--subheading1) * 1.1);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 750px) {
+    .destinationContainer {
+        content: "";
+        .contents {
+            content: "";
+            min-width: 600px;
+            padding: calc(var(--ten-px) * 2) 0px;
+            .title {
+                content: "";
+            }
+            .planets {
+                content: "";
+                main {
+                    .text {
+                        content: "";
+                        margin-top: calc(var(--ten-px) * 7);
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 600px) {
+    .destinationContainer {
+        content: "";
+        .contents {
+            content: "";
+            min-width: 400px;
+            width: 90%;
+            .title {
+                p {
+                    font-size: calc(var(--font-size) * 0.93);
+                }
+                h3 {
+                    font-size: calc(var(--font-size) * 0.9);
+                }
+            }
+
+            .planets {
+                .menu {
+                    content: "";
+                    top: 35%;
+                    ul {
+                        content: "";
+                        justify-content: space-around;
+                        width: 320px;
+                        margin: 0px;
+                    }
+                }
+                main {
+                    content: "";
+                    justify-content: flex-start;
+                    .text {
+                        .about {
+                            p {
+                                content: "";
+                            }
+                        }
+                        .more-info {
+                            div {
+                                .title {
+                                    content: "";
+                                    font-size: calc(var(--subheading2) * 1.25);
+                                }
+                                .description {
+                                    content: "";
+                                    font-size: calc(var(--subheading1) * 0.9);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media (min-width: 401px) and (max-width: 425px) {
+    .destinationContainer {
+        .contents {
+            .title {
+                content: "";
+                padding-left: calc(var(--ten-px) * 2);
+            }
+            .planets {
+                main {
+                    .text {
+                        .about {
+                            p {
+                                padding: 0px calc(var(--seven-px));
+                            }
+                        }
+                        .more-info {
+                            width: 95%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 400px) {
+    .destinationContainer {
+        content: "";
+        .contents {
+            content: "";
+            min-width: 200px;
+            width: 90%;
+            .title {
+                p.count {
+                    font-size: calc(var(--font-size) * 0.9);
+                }
+                h3 {
+                    font-size: calc(var(--font-size) * 0.8);
+                }
+            }
+            .planets {
+                .menu {
+                    content: "";
+                    top: 41%;
+                    ul {
+                        content: "";
+                        .item-link {
+                            content: "";
+                            font-size: calc(var(--nav-text) * 0.9);
+                            padding: calc(var(--ten-px) * 0.8) 0px;
+                        }
+                    }
+                }
+                main {
+                    .text {
+                        .title {
+                            h3 {
+                                content: "";
+                                font-size: calc(var(--heading2) * 0.6);
+                            }
+                        }
+                        .about {
+                            p {
+                                content: "";
+                            }
+                        }
+                        .more-info {
+                            div {
+                                .title {
+                                    content: "";
+                                    font-size: calc(var(--subheading2) * 1.05);
+                                }
+                                .description {
+                                    content: "";
+                                    font-size: calc(var(--subheading1) * 0.8);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes backgroundTrans {
+    0% {
+        background: linear-gradient(to right bottom, var(--dark), var(--dark)),
+            url("/destination/background-destination-desktop.jpg");
+    }
+    75% {
+        background: linear-gradient(
+                to right bottom,
+                var(--dark),
+                var(--dark),
+                #04061345
+            ),
+            url("/destination/background-destination-desktop.jpg");
+    }
+    100% {
+        background: linear-gradient(
+                to right bottom,
+                var(--dark),
+                #04061345,
+                #04061395
+            ),
+            url("/destination/background-destination-desktop.jpg");
+    }
+}

@@ -1,34 +1,112 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Frontend Mentor - Space tourism website solution
 
-## Getting Started
+This is a solution to the [Space tourism website challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/space-tourism-multipage-website-gRWj1URZ3). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
-First, run the development server:
+## Table of contents
 
-```bash
-npm run dev
-# or
-yarn dev
+-   [Overview](#overview)
+    -   [The challenge](#the-challenge)
+    -   [Screenshot](#screenshot)
+    -   [Links](#links)
+-   [My process](#my-process)
+    -   [Built with](#built-with)
+    -   [What I learned](#what-i-learned)
+    -   [Continued development](#continued-development)
+    -   [Useful resources](#useful-resources)
+-   [Author](#author)
+-   [Acknowledgments](#acknowledgments)
+
+## Overview
+
+### The challenge
+
+Users should be able to:
+
+-   View the optimal layout for each of the website's pages depending on their device's screen size
+-   See hover states for all interactive elements on the page
+-   View each page and be able to toggle between the tabs to see new information
+
+### Screenshot
+
+![Screenshot ](./screenshot.png) of /destination route in larger screen
+
+### Links
+
+-   Solution URL: [NextJS - Space-tourism](https://github.com/E-Zbox/NextJS---Space-tourism)
+-   Live Site URL: [No live site url](https://your-live-site-url.com)
+
+## My process
+
+### Built with
+
+-   Next JS ⚔️
+-   Some tasty javascript functions 🏹
+-   Semantic HTML5 markup 🛕
+-   CSS custom properties 🎨
+-   Flexbox 😁
+-   Didn't use styled-components 🤦
+
+-   [React](https://reactjs.org/) - JS library
+-   [Next.js](https://nextjs.org/) - React framework
+
+### What I learned
+
+I should have used styled-components 😀. Jokes aside, the JavaScript (Next JS) was quite simple but CSS was something I had to keep testing. You know how JS is, you figure the logic and you are done while in CSS you keep checking to see if you got the right padding, transform property and why the layout is breaking because of some min-width declayed in larger screen 😓.
+Anyways, it was fun 🥳 🥳 🥳 . Took me about 2 weeks, though school was in session, so 💆
+
+Some of the lines that I recommend you check
+
+```jsx
+... {./components/home/Navbar.jsx}
+<div id="menu-button" className="" onClick={(e)=> handleMenuButton(e)}>
+    <div className="first"></div>
+    <div id="second"></div>
+    <div className="third"></div>
+</div>
+...{./components/technology/Technology.js}
+<Image
+    align={this.state.image.align}
+    layout="fill"
+    src={this.state.displayImage}
+/>
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+```css
+:root {
+    // colors
+    --white1: #ffffff;
+    --white2: #cfd3fc;
+    --dark: #0b0d17;
+    // typography
+    --heading1: 9.375rem;
+}
+.main-contents {
+    --contentsFixedHeight: 350px;
+    main#counters {
+        width: 210px;
+        .space-counter {
+            --size: 52px;
+        }
+    }
+```
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+```js
+const [newItem] = this.state.apiData.filter((item, id) => id == index);
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+### Useful resources
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+-   [React docs](https://reactjs.org/) - Got a bit confused with componentDidMount lifecycle method
+-   [Nextjs documentation](https://nextjs.org/) - Helped me in using fill props for image component
 
-## Learn More
+## Author
 
-To learn more about Next.js, take a look at the following resources:
+-   Website - [My portfolio site](https://www.my-portfolio-site-is-not-ready.com)
+-   Frontend Mentor - [@E-Zbox](https://www.frontendmentor.io/profile/E-Zbox)
+-   Twitter - [@ceoCodes](https://www.twitter.com/ceoCodes)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Acknowledgments
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Stackoverflow 🚀🚀🚀
+React docs🚀💖 🚀
+Next js documentation ✨🚀🚀
