@@ -134,6 +134,7 @@ class Technology extends Component {
                                 align={this.state.image.align}
                                 layout="fill"
                                 src={this.state.displayImage}
+                                alt={this.state.displayImage}
                             />
                         </main>
                     </div>

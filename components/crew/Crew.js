@@ -72,6 +72,7 @@ class Crew extends Component {
                                         width={350}
                                         height={350}
                                         src={item.images.png}
+                                        alt={item.images.png}
                                     />
                                 </div>
                             </div>

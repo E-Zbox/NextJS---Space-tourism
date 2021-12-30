@@ -18,7 +18,7 @@ const Item = ({clickHandler, count, title, href, selected}) => {
     }, [selected])
 
     return (
-        <Link href={href}>
+        <Link href={href} passHref>
             <div className={classname} onClick={clickHandler}>
                 <span>{count}</span>
                 <span>{title}</span>
