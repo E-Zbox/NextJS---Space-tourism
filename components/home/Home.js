@@ -13,12 +13,12 @@ const Home = () => {
                             Let&apos;s face it; if you want to go to space, you
                             might as well genuinely go to outer space and not
                             hover kind of on the edge of it. Well sit back, and
-                            relax because we'll give you a truly out of this
-                            world experience!
+                            relax because we&apos;ll give you a truly out of
+                            this world experience!
                         </p>
                     </div>
                     <div className="explore-image">
-                        <Link href="/destination">
+                        <Link href="/destination" passHref>
                             <h3>Explore</h3>
                         </Link>
                     </div>
